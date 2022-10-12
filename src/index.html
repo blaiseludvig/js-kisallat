@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js" defer></script>
 
-    <title>Document</title>
+  <title>Kisállat nevelde</title>
 </head>
+
 <body>
+
+  <div id="body-wrap">
+    <div id="food-select">
+      <div id="food-grid">
+        <img src="images/hamburger.png" alt="hamburger" data-calories="250" data-foodName="Hamburger">
+        <img src="images/apple-juice.png" alt="apple-juice" data-calories="100" data-foodName="Almalé">
+        <img src="images/watermelon.png" alt="watermelon" data-calories="150" data-foodName="Dinnye">
+      </div>
+    </div>
+
+    <div id="food-list-wrap">
+      <p>Totál kalória: <span id="calories">0</span>
+      <button id="reset">Törlés</button>
+      </p>
+      <ul id="food-list">
+
+      </ul>
+    </div>
+  </div>
+
 </body>
+
 </html>

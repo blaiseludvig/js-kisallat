@@ -1,5 +1,45 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#body-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#food-select {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 0 3rem;
+}
+
+#food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  overflow: hidden;
+}
+
+#food-grid > img {
+  max-height: 250px;
+  width: 100%;
+  object-fit: contain;
+}
+
+#food-list-wrap {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 0 3rem;
+}
+
+#food-list {
+  list-style-type: disclosure-closed;
+}
+
+#reset {
+  color: white;
+  background-color: red;
+  padding: 1em;
+  border-radius: .5rem;
+}
