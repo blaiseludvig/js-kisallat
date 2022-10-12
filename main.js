@@ -16,7 +16,7 @@
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://change_me/./src/style.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://js-kisalatt/./src/style.css?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n// import { animateCSS } from \"./animatecss\";\n\nlet element = document.createElement('h1');\nelement.textContent = \"Ha ezt látod, akkor működik!\"\ndocument.body.append(element);\n\n\n//# sourceURL=webpack://change_me/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n// import { animateCSS } from \"./animatecss\";\n\nlet images = document.querySelectorAll(\"#food-grid > img\");\nlet food_list = document.querySelector(\"#food-list\");\nlet calories = document.querySelector(\"#calories\");\nlet reset = document.querySelector(\"#reset\");\n\nimages.forEach((img) => {\n  img.addEventListener(\"click\", () => {\n    let li = document.createElement(\"li\");\n    li.innerHTML = `${img.dataset.foodname} <i>(${img.dataset.calories})</i>`;\n\n    calories.textContent = parseInt(img.dataset.calories);\n\n    food_list.appendChild(li);\n\n  });\n});\n\nreset.addEventListener(\"click\", () => {\n  food_list.innerHTML = \"\";\n})\n\n//# sourceURL=webpack://js-kisalatt/./src/index.js?");
 
 /***/ })
 
