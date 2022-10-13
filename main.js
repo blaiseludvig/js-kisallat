@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/Food.js":
+/*!*********************!*\
+  !*** ./src/Food.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Food\": () => (/* binding */ Food)\n/* harmony export */ });\nclass Food {\n  name;\n  calories;\n\n  constructor(name, calories) {\n    this.name = name;\n    this.calories = parseInt(calories);\n  }\n}\n\n//# sourceURL=webpack://js-kisalatt/./src/Food.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n// import { animateCSS } from \"./animatecss\";\n\nlet images = document.querySelectorAll(\"#food-grid > img\");\nlet food_list = document.querySelector(\"#food-list\");\nlet calories = document.querySelector(\"#calories\");\nlet reset = document.querySelector(\"#reset\");\n\nimages.forEach((img) => {\n  img.addEventListener(\"click\", () => {\n    let li = document.createElement(\"li\");\n    li.innerHTML = `${img.dataset.foodname} <i>(${img.dataset.calories})</i>`;\n\n    calories.textContent = parseInt(img.dataset.calories);\n\n    food_list.appendChild(li);\n\n  });\n});\n\nreset.addEventListener(\"click\", () => {\n  food_list.innerHTML = \"\";\n})\n\n//# sourceURL=webpack://js-kisalatt/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Food__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Food */ \"./src/Food.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n// import { animateCSS } from \"./animatecss\";\n\nlet images = document.querySelectorAll(\"#food-grid > img\");\nlet food_list = document.querySelector(\"#food-list\");\nlet healthy_food_list = document.querySelector(\"#healthy-food-list\");\nlet calories = document.querySelector(\"#calories\");\nlet reset = document.querySelector(\"#reset\");\nlet stats = document.querySelector(\"#stats\");\n\nlet foods = [];\n\nimages.forEach((img) => {\n  img.addEventListener(\"click\", () => {\n    let span = document.createElement(\"span\");\n    span.innerHTML = `${img.dataset.foodname} <i>(${img.dataset.calories})</i>`;\n\n    foods.push(new _Food__WEBPACK_IMPORTED_MODULE_0__.Food(img.dataset.foodname, img.dataset.calories));\n\n    calories.textContent = parseInt(calories.textContent) + parseInt(img.dataset.calories);\n\n    food_list.appendChild(span);\n  });\n});\n\nreset.addEventListener(\"click\", () => {\n  food_list.innerHTML = \"\";\n  healthy_food_list.classList.add(\"hide\");\n  calories.textContent = 0;\n  foods = [];\n});\n\nstats.addEventListener(\"click\", () => {\n  healthy_food_list.classList.remove(\"hide\");\n  healthy_food_list.innerHTML = \"\";\n  let healthy_foods = [];\n\n  for (const food of foods) {\n    if (food.calories < 200){\n      healthy_foods.push(food);\n    }\n  }\n\n  healthy_foods.sort((a, b) => a.calories - b.calories);\n\n  let healthy_foods_sum = [];\n\n  for (const food of healthy_foods) {\n    if (!(food.name in healthy_foods_sum)) {\n      healthy_foods_sum[food.name] = {quantity: 0, total_calories: 0};\n    }\n\n    healthy_foods_sum[food.name].quantity += 1;\n    healthy_foods_sum[food.name].total_calories += food.calories;\n\n  }\n\n  for (const food in healthy_foods_sum) {\n    let span = document.createElement(\"span\");\n    span.textContent = `${healthy_foods_sum[food].quantity} ${food} - ${healthy_foods_sum[food].total_calories} cal`;\n    healthy_food_list.appendChild(span);\n  }\n\n});\n\n//# sourceURL=webpack://js-kisalatt/./src/index.js?");
 
 /***/ })
 
@@ -57,6 +67,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports

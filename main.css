@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hide {
+  display: none !important;
+}
+
 #body-wrap {
   max-width: 1280px;
   margin: 0 auto;
@@ -35,7 +43,35 @@
   padding: 0 3rem;
 }
 
+#calories {
+  display: inline-block;
+  min-width: 7ch;
+}
+
+#stats {
+  color: white;
+  background-color: green;
+  padding: 1em;
+  border-radius: 0.5rem;
+}
+
+#healthy-food-list {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  align-content: baseline;
+}
+
+#healthy-food-list > span {
+  border: 2px green solid;
+  border-radius: 0.5em;
+  padding: 0.3rem;
+  text-align: center;
+}
+
 #food-list {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
@@ -44,8 +80,8 @@
 
 #food-list > span {
   border: 2px rgb(5, 24, 24) solid;
-  border-radius: .5em;
-  padding: .2rem;
+  border-radius: 0.5em;
+  padding: 0.3rem;
   text-align: center;
 }
 
@@ -53,6 +89,6 @@
   color: white;
   background-color: red;
   padding: 1em;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
